@@ -395,6 +395,7 @@ window.marlinsSettings=settings=>{state.testEnabled={1:settings?.test1!==false,2
 render();
 setInterval(()=>{const timer=document.querySelector('#timer');if(timer)timer.textContent=time();},1000);
 </script><script type="module">import{initializeApp}from'https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js';import{getFirestore,doc,getDoc,collection,addDoc,serverTimestamp}from'https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js';const app=initializeApp({apiKey:'AIzaSyCyKf3BgFlZ8ASyCSLeAEYZQ3ssDyI8bzc',authDomain:'marlins-reading-class.firebaseapp.com',projectId:'marlins-reading-class',storageBucket:'marlins-reading-class.firebasestorage.app',messagingSenderId:'939225898579',appId:'1:939225898579:web:8e02647bdcce096099f0a6'}),db=getFirestore(app);window.marlinsStore={recordAttempt:data=>addDoc(collection(db,'attempts'),{...data,submittedAt:serverTimestamp()})};try{const snap=await getDoc(doc(db,'settings','tests'));window.marlinsSettings?.(snap.exists()?snap.data():{});}catch{window.marlinsSettings?.({});}</script><!-- Test 8 and 9 deployment refresh -->
+<!-- Pages refresh marker -->
 </body></html>
 
 
